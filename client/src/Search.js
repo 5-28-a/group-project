@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { saveMovies } from "./actions/AppActions";
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 class Search extends React.Component {
   state = {
@@ -22,20 +23,19 @@ searchMovies = () => {
 
   render() {
     return (
-      <div className="container">
-        <hr />
         <form onSubmit={this.handleSubmit}>
-          <input
+          <FormGroup>
+          <FormControl
             type="text"
-            placeholder="search"
+            placeholder="Movie Search..."
             value={this.state.search}
             onChange={search => {
               this.setState({ search: search.target.value });
             }}
           />
-          <input type="submit" value="submit" />
+        </FormGroup>{' '}
+          <Button bsStyle="info" type="submit">Search</Button>
         </form>
-      </div>
     );
   }
 }
