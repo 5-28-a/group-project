@@ -5,7 +5,7 @@ body {
 
 /*Navbar transparency*/
 .navbar-default{
-  background: gray;
+  background: #595959;
   border-color:transparent;
 }
 
@@ -25,41 +25,36 @@ body {
 footer {
   background:transparent;
   border-color:transparent;
+  text-align: center;
+  font-style: #595959
 }
 
 /*Navbar text colors and opacity*/
 .navbar-default .navbar-brand {
   font-size: 20px;
   color: white;
-  /*text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;*/
+  display: flex;
+  align-items: center;
 }
+
 .navbar-default .navbar-nav > li > a {
   font-size: 14px;
   color: white;
-  /*text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;*/
 }
+
+/*Navbar text colors and opacity on hover */
 .navbar-default .navbar-brand:hover {
-  transition: all 500ms;
+  transition: all 250ms;
   color: #00d8ff;
-  opacity: 0.75;
+  
 }
+
 .navbar-default .navbar-nav > li > a:hover {
-  transition: all 500ms;
+  transition: all 250ms;
   color: white;
-  opacity: 0.75;
+  
 }
 
-a:hover{
-  font-size:88px;
-  transition: all 500ms;
-  font-size-adjust: 20px;
-
+.btn-icon {
+  background-color: #00d8ff
 }
