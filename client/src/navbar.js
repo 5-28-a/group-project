@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './index.css';
-import { Button, Navbar, Nav, NavItem, FormGroup, FormControl } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import Search from './Search';
+import { Provider } from 'react-redux';
+import { store } from './Result';
 
 class Navibar extends Component {
   render() {
@@ -25,10 +28,9 @@ class Navibar extends Component {
   </Nav>
   <Navbar.Collapse>
     <Navbar.Form pullRight>
-      <FormGroup>
-        <FormControl type="text" placeholder="Search" />
-      </FormGroup>{' '}
-      <Button bsStyle="info" type="submit">Search</Button>
+      <Provider store={store}>
+        <Search />
+      </Provider>
     </Navbar.Form>
   </Navbar.Collapse>
 </Navbar>
