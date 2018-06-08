@@ -10,9 +10,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navibar />
-      <div className="AppContent"> Some Stuff </div>
-      <Result />
-      <Footer />
+        <div id="AppContent"> Some Stuff </div>
+        <Result />
+        <Footer />
       </div>
     );
   }
