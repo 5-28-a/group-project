@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import { } from 'react-bootstrap';
-import './index.css';
-import './App.css';
+import React from "react";
 
-class About extends Component {
+
+class About extends React.Component {
+
   render() {
-    return (
-      <div className="About">
-       
-      </div>
+    return(
+      <div><h1>About</h1></div>
     );
   }
 }

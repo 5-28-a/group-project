@@ -1,22 +1,11 @@
-import React, { Component } from 'react';
-import { Jumbotron, Button } from 'react-bootstrap';
-import './index.css';
-import './App.css';
+import React from "react";
 
-class Landing extends Component {
+
+class Landing extends React.Component {
+
   render() {
-    return (
-      <div className="Landing">
-       <Jumbotron>
-        <h1>Hello, world!</h1>
-            <p>
-                Welcome to our app, <img src="mvlogopng.png" alt="smooth" height={40}/>ovieFive!
-            </p>
-            <p>
-                <Button bsStyle="info">About Us</Button>
-            </p>
-        </Jumbotron>;
-      </div>
+    return(
+      <div><h1>Home Page</h1></div>
     );
   }
 }
