@@ -3,16 +3,16 @@ import './index.css';
 import './App.css';
 import Navibar from './navbar.js';
 import Footer from './footer.js';
-import Result from './Result';
+import Route from './Route';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <Navibar />
-        <div id="AppContent"> Some Stuff </div>
-        <Result />
-        <Footer />
+      <Navibar />
+      <Route />
+      <Footer />
       </div>
     );
   }
