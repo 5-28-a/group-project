@@ -3,8 +3,6 @@ import './index.css';
 import Navibar from './navbar.js';
 import Footer from './footer.js';
 import Route from './Route';
-import Landing from './Landing';
-import About from './About';
 
 class App extends Component {
 
@@ -14,8 +12,6 @@ class App extends Component {
       <Navibar />
       <div className="AppContent">
       <Route />
-      <About />
-      <Landing />
       </div>
       <Footer />
       </div>
