@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './index.css';
-import './App.css';
 import Navibar from './navbar.js';
 import Footer from './footer.js';
 import Route from './Route';
+import Landing from './Landing';
+import About from './About';
 
 class App extends Component {
 
@@ -11,7 +12,11 @@ class App extends Component {
     return (
       <div className="App">
       <Navibar />
+      <div className="AppContent">
       <Route />
+      <About />
+      <Landing />
+      </div>
       <Footer />
       </div>
     );
