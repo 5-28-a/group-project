@@ -1,11 +1,11 @@
 import React from "react";
-
+import './login.css';
 
 class Login extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="Login">
         <h1>Login</h1>
         <form action="/login" method="post">
           Username:

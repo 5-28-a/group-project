@@ -8,8 +8,8 @@ class About extends React.Component {
 
   render() {
     return(
-      <div>
-        <h1>About</h1>
+      <div className="About">
+        <h1>About the Devs</h1>
         <Media>
     <Media.Left>
       <img width={64} height={64} src="/mvlogopng.png" alt="thumbnail" />
