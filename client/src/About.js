@@ -12,7 +12,7 @@ class About extends React.Component {
         <h1>About the Devs</h1>
         <Media>
     <Media.Left>
-      <img width={64} height={64} src="/mvlogopng.png" alt="thumbnail" />
+      <img width={100} height={100} src="/mvlogopng.png" alt="thumbnail" />
     </Media.Left>
     <Media.Body>
       <Media.Heading>Alan Wilson aka NannerFox</Media.Heading>
@@ -35,7 +35,7 @@ class About extends React.Component {
       </p>
     </Media.Body>
     <Media.Right>
-      <img width={64} height={64} src="/mvlogopng.png" alt="thumbnail" />
+      <img width={100} height={100} src="/mvlogopng.png" alt="thumbnail" />
     </Media.Right>
   </Media>
         </div>

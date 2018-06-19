@@ -25,7 +25,7 @@ class Navibar extends Component {
                 About
               </NavItem>
               <NavItem className="navChild" eventKey={3} href="#login">
-                Login
+                Login/Signup
               </NavItem>
             </Nav>
             <Navbar.Form className="navChild" pullRight>

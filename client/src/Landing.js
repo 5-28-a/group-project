@@ -8,10 +8,10 @@ class Landing extends React.Component {
   render() {
     return(
       <div className="Landing">
-        <img height={200} src="mvlogopng.png" alt="wtf" />
+        <img className="landingLogo" height={300} src="mvlogopng.png" alt="wtf" />
         <h1>MovieFive</h1>
-        <p> Welcome to our app, MovieFive! Find out about the developers here.</p>
-        <Button bsStyle="info" href="#about">About Us</Button>
+        <p> Welcome to our app, MovieFive! Get started here.</p>
+        <Button bsStyle="info" href="#signup">Sign Up</Button>
       </div>
     );
   }

@@ -2,8 +2,8 @@ import React from 'react';
 import { createStore } from 'redux';
 import reduce from "./reducers/reduce";
 import './result.css';
-import './index.css';
-import { Button, Media } from 'react-bootstrap';
+
+import { Button, Media, Col, Row } from 'react-bootstrap';
 
 export const store = createStore(reduce);
 
@@ -30,9 +30,13 @@ class Result extends React.Component {
       {this.state.movies.map((movie, index) => <div key={index}>
         <div id={movie.id}>
         <Media>
+          <Row>
+          <Col xs ={5} sm={4} md={2}>
     <Media.Left>
     <div className="pic"><img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.poster_path}`} alt="58008" /></div>
     </Media.Left>
+    </Col>
+    <Col xs={7} sm={8} md={10}>
     <Media.Body>
       <Media.Heading><div className="moviename">{movie.title}</div></Media.Heading>
       <div className="description">
@@ -41,12 +45,11 @@ class Result extends React.Component {
       </div>
       <Button bsStyle="info" type="submit">Add To My List!</Button>
     </Media.Body>
-  </Media><br />
-          {/*<div className="pic"><img className="moviepic" alt={movie.poster_path} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.poster_path}`} /></div>
-          <div className="moviename">{movie.title}</div>
-          <div className="description">({movie.release_date})</div>
-        
-    <Button bsStyle="info" type="submit">Add To My List!</Button>*/}
+    </Col>
+    </Row>
+    </Media>
+  <br />
+  
         </div>
       </div> )}
     </div>

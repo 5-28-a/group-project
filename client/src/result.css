@@ -4,10 +4,7 @@
    
 }
 
-.moviename {
-    vertical-align: top
-}
-
-.description {
-   
+.moviepic {
+    max-width: 100%;
+    object-fit: contain;
 }
