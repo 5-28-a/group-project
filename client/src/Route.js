@@ -19,6 +19,7 @@ constructor(props){
 
 componentDidMount() {
     window.addEventListener("hashchange", this.routeSwitch);
+    this.setState({user: this.props.user})
 }
 
 routeSwitch() {
