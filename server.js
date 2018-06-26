@@ -256,7 +256,7 @@ app.get('/userprofile', (req, res) => {
   });
 })
 
-app.get('/movie', (req, res) => {
+app.get('/listall', (req, res) => {
   Movie.find(function(err, users){
     res.json(users);
   });

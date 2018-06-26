@@ -1,13 +1,36 @@
 import React from "react";
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 class IsLoggedIn extends React.Component {
   constructor() {
       super()
       this.state = {
         user: null,
-        movies: []
+        movies: {
+        "one": {
+            "name": "one",
+            "pic": "/ocsmt4duUyNZtTM641k262PBeIU.jpg"
+        },
+        "two": {
+            "name": "two",
+            "pic": "/ocsmt4duUyNZtTM641k262PBeIU.jpg"
+        },
+        "three": {
+            "name": "three",
+            "pic": "/ocsmt4duUyNZtTM641k262PBeIU.jpg"
+        },
+        "four": {
+            "name": "four",
+            "pic": "/ocsmt4duUyNZtTM641k262PBeIU.jpg"
+        },
+        "five": {
+            "name": "five",
+            "pic": "/ocsmt4duUyNZtTM641k262PBeIU.jpg"
+        }
       }
+    }
+      this.movieDisplay = this.movieDisplay.bind(this);
     }
 componentDidMount() {
   this.setState({ user: this.props.user });
@@ -21,34 +44,65 @@ componentDidMount() {
       console.log(error);
     });
   }
-
+movieDisplay() {
+  return (
+    <div>
+      <h1>1</h1>
+      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.one.pic}`} alt="58008" />
+      <h2>{this.state.movies.one.name}</h2>
+        <form action="/onetwo" method="post" name="onetwo">
+          <input type="hidden" name="name" value={this.state.user}/>
+          <input type="hidden" name="onemov" value={this.state.movies.one.name}/>
+          <input type="hidden" name="onepic" value={this.state.movies.one.pic}/>
+          <input type="hidden" name="twomov" value={this.state.movies.two.name}/>
+          <input type="hidden" name="twopic" value={this.state.movies.two.pic}/>
+          <Button bsStyle="info" type="submit">Swap One and Two</Button>
+        </form>
+      <h1>2</h1>
+      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.two.pic}`} alt="58008" />
+      <h2>{this.state.movies.two.name}</h2>
+        <form action="/twothree" method="post" name="twothree">
+          <input type="hidden" name="name" value={this.state.user}/>
+          <input type="hidden" name="threemov" value={this.state.movies.three.name}/>
+          <input type="hidden" name="threepic" value={this.state.movies.three.pic}/>
+          <input type="hidden" name="twomov" value={this.state.movies.two.name}/>
+          <input type="hidden" name="twopic" value={this.state.movies.two.pic}/>
+          <Button bsStyle="info" type="submit">Swap Two and Three</Button>
+        </form>
+      <h1>3</h1>
+      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.three.pic}`} alt="58008" />
+      <h2>{this.state.movies.three.name}</h2>
+        <form action="/threefour" method="post" name="threefour">
+          <input type="hidden" name="name" value={this.state.user}/>
+          <input type="hidden" name="threemov" value={this.state.movies.three.name}/>
+          <input type="hidden" name="threepic" value={this.state.movies.three.pic}/>
+          <input type="hidden" name="fourmov" value={this.state.movies.four.name}/>
+          <input type="hidden" name="fourpic" value={this.state.movies.four.pic}/>
+          <Button bsStyle="info" type="submit">Swap Three and Four</Button>
+        </form>
+      <h1>4</h1>
+      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.four.pic}`} alt="58008" />
+      <h2>{this.state.movies.four.name}</h2>
+        <form action="/fourfive" method="post" name="fourfive">
+          <input type="hidden" name="name" value={this.state.user}/>
+          <input type="hidden" name="fivemov" value={this.state.movies.five.name}/>
+          <input type="hidden" name="fivepic" value={this.state.movies.five.pic}/>
+          <input type="hidden" name="fourmov" value={this.state.movies.four.name}/>
+          <input type="hidden" name="fourpic" value={this.state.movies.four.pic}/>
+          <Button bsStyle="info" type="submit">Swap Four and Five</Button>
+        </form>
+      <h1>5</h1>
+      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.five.pic}`} alt="58008" />
+      <h2>{this.state.movies.five.name}</h2>
+    </div>
+  )
+}
   render() {
     return(
       <div>
         <h1>Welcome, {this.state.user}</h1>
-        {/* <div>{this.state.movies.map((movie, index) => <div key={index}>
-          <div>
-            <h1>1</h1>
-            <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.one.pic}`} alt="58008" />
-            <h2>{movie.one.name}</h2>
-            <h1>2</h1>
-            <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.two.pic}`} alt="58008" />
-            <h2>{movie.two.name}</h2>
-            <h1>3</h1>
-            <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.movie.pic}`} alt="58008" />
-            <h2>{movie.three.name}</h2>
-            <h1>4</h1>
-            <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.four.pic}`} alt="58008" />
-            <h2>{movie.four.name}</h2>
-            <h1>5</h1>
-            <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.five.pic}`} alt="58008" />
-            <h2>{movie.five.name}</h2>
-          </div>
-        </div>
-        )
-        }
-      </div> */}
-  </div>
+        {this.movieDisplay()}
+      </div>
     );
   }
 }
