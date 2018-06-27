@@ -1,6 +1,9 @@
 import React from "react";
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import './index.css';
+import './profile.css';
+
+import { Button, Media, Col, Row, Glyphicon } from 'react-bootstrap';
 
 class IsLoggedIn extends React.Component {
   constructor() {
@@ -46,61 +49,190 @@ componentDidMount() {
   }
 movieDisplay() {
   return (
-    <div>
-      <h1>1</h1>
-      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.one.pic}`} alt="58008" />
-      <h2>{this.state.movies.one.name}</h2>
-        <form action="/onetwo" method="post" name="onetwo">
-          <input type="hidden" name="name" value={this.state.user}/>
-          <input type="hidden" name="onemov" value={this.state.movies.one.name}/>
-          <input type="hidden" name="onepic" value={this.state.movies.one.pic}/>
-          <input type="hidden" name="twomov" value={this.state.movies.two.name}/>
-          <input type="hidden" name="twopic" value={this.state.movies.two.pic}/>
-          <Button bsStyle="info" type="submit">Swap One and Two</Button>
-        </form>
-      <h1>2</h1>
-      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.two.pic}`} alt="58008" />
-      <h2>{this.state.movies.two.name}</h2>
-        <form action="/twothree" method="post" name="twothree">
-          <input type="hidden" name="name" value={this.state.user}/>
-          <input type="hidden" name="threemov" value={this.state.movies.three.name}/>
-          <input type="hidden" name="threepic" value={this.state.movies.three.pic}/>
-          <input type="hidden" name="twomov" value={this.state.movies.two.name}/>
-          <input type="hidden" name="twopic" value={this.state.movies.two.pic}/>
-          <Button bsStyle="info" type="submit">Swap Two and Three</Button>
-        </form>
-      <h1>3</h1>
-      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.three.pic}`} alt="58008" />
-      <h2>{this.state.movies.three.name}</h2>
-        <form action="/threefour" method="post" name="threefour">
-          <input type="hidden" name="name" value={this.state.user}/>
-          <input type="hidden" name="threemov" value={this.state.movies.three.name}/>
-          <input type="hidden" name="threepic" value={this.state.movies.three.pic}/>
-          <input type="hidden" name="fourmov" value={this.state.movies.four.name}/>
-          <input type="hidden" name="fourpic" value={this.state.movies.four.pic}/>
-          <Button bsStyle="info" type="submit">Swap Three and Four</Button>
-        </form>
-      <h1>4</h1>
-      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.four.pic}`} alt="58008" />
-      <h2>{this.state.movies.four.name}</h2>
-        <form action="/fourfive" method="post" name="fourfive">
-          <input type="hidden" name="name" value={this.state.user}/>
-          <input type="hidden" name="fivemov" value={this.state.movies.five.name}/>
-          <input type="hidden" name="fivepic" value={this.state.movies.five.pic}/>
-          <input type="hidden" name="fourmov" value={this.state.movies.four.name}/>
-          <input type="hidden" name="fourpic" value={this.state.movies.four.pic}/>
-          <Button bsStyle="info" type="submit">Swap Four and Five</Button>
-        </form>
-      <h1>5</h1>
-      <img className="moviepic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.five.pic}`} alt="58008" />
-      <h2>{this.state.movies.five.name}</h2>
+    <div className="Profile">
+      <Media>
+        <Row className="show-grid">
+          <h3>Movie One</h3>
+          <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
+            <Media.Left align="middle">
+              <div className="profileBorder">
+                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.one.pic}`} alt="58008" />
+              </div>
+            </Media.Left>
+          </Col>
+          <Col xs={6} sm={4} md={3}>
+            <Media.Body>
+              <Media.Heading>
+                <h2>{this.state.movies.one.name}</h2>
+              </Media.Heading>
+              <p>
+                <form action="/onetwo" method="post" name="onetwo">
+                  <input type="hidden" name="name" value={this.state.user}/>
+                  <input type="hidden" name="onemov" value={this.state.movies.one.name}/>
+                  <input type="hidden" name="onepic" value={this.state.movies.one.pic}/>
+                  <input type="hidden" name="twomov" value={this.state.movies.two.name}/>
+                  <input type="hidden" name="twopic" value={this.state.movies.two.pic}/>
+                  <Button bsStyle="info" type="submit">
+                    Move Down  
+                    <Glyphicon glyph="arrow-down" />
+                  </Button>
+                </form>
+                <br />
+                <Button className="deleteButton" bsStyle="info" type="submit">
+                  Delete Movie
+                  <Glyphicon glyph="remove" />
+                </Button>
+              </p>
+            </Media.Body>
+          </Col>
+        </Row>
+      </Media>
+      <Media>
+        <Row>
+          <h3>Movie Two</h3>
+          <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
+            <Media.Left>
+              <div className="profileBorder">
+                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.two.pic}`} alt="58008" />
+              </div>
+            </Media.Left>
+          </Col>
+          <Col xs={6} sm={4} md={3}>
+            <Media.Body>
+              <Media.Heading>
+                <h2>{this.state.movies.two.name}</h2>
+              </Media.Heading>
+              <p>
+                <form action="/twothree" method="post" name="twothree">
+                  <input type="hidden" name="name" value={this.state.user}/>
+                  <input type="hidden" name="threemov" value={this.state.movies.three.name}/>
+                  <input type="hidden" name="threepic" value={this.state.movies.three.pic}/>
+                  <input type="hidden" name="twomov" value={this.state.movies.two.name}/>
+                  <input type="hidden" name="twopic" value={this.state.movies.two.pic}/>
+                  <Button bsStyle="info" type="submit">
+                    Move Down 
+                    <Glyphicon glyph="arrow-down" />
+                  </Button>
+                </form>
+                <br />
+                <Button bsStyle="info" type="submit">
+                  Delete Movie
+                  <Glyphicon glyph="remove" />
+                </Button>
+              </p>
+            </Media.Body>
+          </Col>
+        </Row>
+      </Media>
+      <Media>
+        <Row>
+          <h3>Movie Three</h3>
+          <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
+            <Media.Left>
+                <div className="profileBorder">
+                  <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.three.pic}`} alt="58008" />
+                </div>
+            </Media.Left>
+          </Col>
+          <Col xs={6} sm={4} md={3}>
+            <Media.Body>
+              <Media.Heading>
+                <h2>{this.state.movies.three.name}</h2>
+              </Media.Heading>
+              <p>
+                <form action="/threefour" method="post" name="threefour">
+                  <input type="hidden" name="name" value={this.state.user}/>
+                  <input type="hidden" name="threemov" value={this.state.movies.three.name}/>
+                  <input type="hidden" name="threepic" value={this.state.movies.three.pic}/>
+                  <input type="hidden" name="fourmov" value={this.state.movies.four.name}/>
+                  <input type="hidden" name="fourpic" value={this.state.movies.four.pic}/>
+                  <Button bsStyle="info" type="submit">
+                    Move Down 
+                    <Glyphicon glyph="arrow-down" />
+                  </Button>
+                </form>
+                <br />
+                <Button bsStyle="info" type="submit">
+                  Delete Movie
+                  <Glyphicon glyph="remove" />
+                </Button>
+              </p>
+            </Media.Body>
+          </Col>
+        </Row>
+      </Media>
+      <Media>
+        <Row>
+          <h3>Movie Four</h3>
+          <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
+            <Media.Left>
+              <div className="profileBorder">
+                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.four.pic}`} alt="58008" />
+              </div>
+            </Media.Left>
+          </Col>
+          <Col xs={6} sm={4} md={3}>
+            <Media.Body>
+              <Media.Heading>
+                <h2>{this.state.movies.four.name}</h2>
+              </Media.Heading>
+              <p>
+                <form action="/fourfive" method="post" name="fourfive">
+                  <input type="hidden" name="name" value={this.state.user}/>
+                  <input type="hidden" name="fivemov" value={this.state.movies.five.name}/>
+                  <input type="hidden" name="fivepic" value={this.state.movies.five.pic}/>
+                  <input type="hidden" name="fourmov" value={this.state.movies.four.name}/>
+                  <input type="hidden" name="fourpic" value={this.state.movies.four.pic}/>
+                  <Button bsStyle="info" type="submit">
+                    Move Down 
+                    <Glyphicon glyph="arrow-down" />
+                  </Button>
+                </form>
+                <br />
+                <Button bsStyle="info" type="submit">
+                  Delete Movie
+                  <Glyphicon glyph="remove" />
+                </Button>
+              </p>
+            </Media.Body>
+          </Col>
+        </Row>
+      </Media>
+      <Media>
+        <Row>
+          <h3>Movie Five</h3>
+          <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
+            <Media.Left>
+              <div className="profileBorder">
+                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.five.pic}`} alt="58008" />
+              </div>
+            </Media.Left>
+          </Col>
+          <Col xs={6} sm={4} md={3}>
+            <Media.Body>
+              <Media.Heading>
+                <h2>{this.state.movies.five.name}</h2>
+              </Media.Heading>
+              <p>
+                <form>
+                </form>
+                <br />
+                <Button bsStyle="info" type="submit">
+                  Delete Movie
+                  <Glyphicon glyph="remove" />
+                </Button>
+              </p>
+            </Media.Body>
+          </Col>
+        </Row>
+      </Media>
     </div>
   )
 }
   render() {
     return(
       <div>
-        <h1>Welcome, {this.state.user}</h1>
+        <h1>Welcome, {this.state.user}!</h1>
         {this.movieDisplay()}
       </div>
     );
