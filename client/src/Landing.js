@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from 'react-bootstrap';
+import { Button, Media } from 'react-bootstrap';
 import './index.css';
 import './landing.css';
 
@@ -11,7 +11,7 @@ class Landing extends React.Component {
         <img className="landingLogo" height={300} src="mvlogopng.png" alt="wtf" />
         <h1>MovieFive</h1>
         <p> Welcome to our app, MovieFive! Get started here.</p>
-        <Button bsStyle="info" href="#signup">Sign Up</Button>
+        <Button bsStyle="info" href="#login">Log In</Button>
       </div>
     );
   }

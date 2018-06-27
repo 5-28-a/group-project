@@ -1,4 +1,5 @@
 import React from "react";
+import './index.css';
 import './login.css';
 import { Form, FormControl, FormGroup, Col, Button } from 'react-bootstrap';
 
@@ -26,12 +27,12 @@ class Login extends React.Component {
           </Col>
           </FormGroup>
           <FormGroup>
-            <Col smOffset={2} sm={10}>
+            <Col sm={12}>
           <Button bsStyle="info" type="submit">Submit</Button>
           </Col>
           </FormGroup>
         </Form>
-        <Col smOffset={2}>
+        <Col sm={12}>
         <p>Don't have an account yet? <a href="#signup">Sign up here</a></p>
         </Col>
       </div>
