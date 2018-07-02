@@ -1,0 +1,15 @@
+.listPic {
+    max-width: 100%;
+    object-fit: contain;
+    border: 3px solid #595959;
+    border-radius: 3px;
+   margin-bottom: 5px;
+}
+
+.list {
+    text-align: left;
+}
+
+.cochina {
+    text-align: center;
+}
