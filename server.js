@@ -13,6 +13,7 @@ const db = mongoose.connection;
 const app = express();
 const User = require('./models/User');
 const Movie = require('./models/Movie');
+const Rating = require('./models/Rating');
 // Development mode port
 const port = process.env.PORT || 5000;
 app.listen(port)
@@ -59,6 +60,24 @@ app.get('/test', (req, res) => {
     {id:4, name: "test"}
   ]);
 });
+//
+app.get('/userlist', (req, res) => {
+  let inName = req.query.name;
+  let name = { name : inName };
+  Movie.findOne(name, function(err, list){
+    if (err) {
+      console.error('error!!!');
+      res.redirect('/#home');
+    }
+    else if (list){
+      res.json(list);
+    }
+    else {
+      console.log('no matched query');
+      res.redirect('/#home');
+    }
+  });
+})
 
 app.post('/delone', function(req, res) {
   let inName = req.body.name;
@@ -333,31 +352,47 @@ app.post('/movie', function(req, res) {
         if (doc.movie.one.name == null){
           doc.movie.one.name = moviename;
           doc.movie.one.pic = pic;
+          doc.save(function (err, updatedMov) {
+            if (err) return handleError(err);
+            res.redirect('/#profile');
+          });
         }
         else if (doc.movie.two.name == null){
           doc.movie.two.name = moviename;
           doc.movie.two.pic = pic;
+          doc.save(function (err, updatedMov) {
+            if (err) return handleError(err);
+            res.redirect('/#profile');
+          });
         }
         else if (doc.movie.three.name == null){
           doc.movie.three.name = moviename;
           doc.movie.three.pic = pic;
+          doc.save(function (err, updatedMov) {
+            if (err) return handleError(err);
+            res.redirect('/#profile');
+          });
         }
         else if (doc.movie.four.name == null){
           doc.movie.four.name = moviename;
           doc.movie.four.pic = pic;
+          doc.save(function (err, updatedMov) {
+            if (err) return handleError(err);
+            res.redirect('/#profile');
+          });
         }
         else if (doc.movie.five.name == null){
           doc.movie.five.name = moviename;
           doc.movie.five.pic = pic;
+          doc.save(function (err, updatedMov) {
+            if (err) return handleError(err);
+            res.redirect('/#profile');
+          });
         }
         else {
-          console.error('All slots filled!');
+          console.log('All slots filled!');
           res.redirect('/#profile');
         }
-        doc.save(function (err, updatedMov) {
-          if (err) return handleError(err);
-          res.redirect('/#profile');
-        });
       }
       else {
         console.log('no matched query');
@@ -400,6 +435,22 @@ app.get('/auth', (req, res, next) => {
 	}
 })
 
+app.get('/rating', (req, res) => {
+  let inName = req.query.name;
+  let name = { name : inName };
+  Rating.find(name, function(err, ratings){
+    res.json(ratings);
+  });
+})
+
+app.post('/rating', (req, res) => {
+  Rating.create({
+    name : req.query.name,
+    rating: req.query.rating
+  });
+  res.end();
+});
+
 app.post('/register', function(req, res) {
   User.register(new User({ username : req.body.username }), req.body.password, function(err, user) {
     if (err) {
@@ -409,6 +460,10 @@ app.post('/register', function(req, res) {
       res.redirect('/');
     });
     Movie.create({ name : req.body.username});
+    Rating.create({
+      name : req.body.username,
+      rating: 5
+    });
   });
 });
 
