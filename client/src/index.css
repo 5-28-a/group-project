@@ -58,6 +58,7 @@ h1 {
 }
 
 @media (max-width: 300px) {
+  
   .navbar-header {
       float: none;
   }
@@ -86,6 +87,45 @@ h1 {
     font-size: 40px;
     padding-bottom: 10px;
     
+  }
+}
+@media (max-width: 400px) {
+  .AppContent {
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.17em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  footer{
+    position:static;
+    width:auto;
+    bottom:auto;
+  }
+  .listPic {
+    size: 90%;
+  }
+  .btn-info {
+    font-size: 80%;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 700px) {
+  h3 {
+    font-size: 1.17em;
   }
 }
 
@@ -175,15 +215,6 @@ footer {
   bottom: 0;
   margin-top: 20px;
   
-}
-
-/*Footer to go off screen when screen gets too small*/
-@media(max-height:500px){
-  footer{
-    position:static;
-    width:auto;
-    bottom:auto;
-  }
 }
 
 .footerLogo {
