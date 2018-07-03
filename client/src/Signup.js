@@ -12,7 +12,7 @@ class Signup extends React.Component {
         <Form horizontal action="/register" method="post">
           <FormGroup controlId="formHorizontalUser">
           <Col sm={2}>
-          Username:
+          Choose a Username:
           </Col>
           <Col sm={10}>
           <FormControl type="text" name="username" />
@@ -20,7 +20,7 @@ class Signup extends React.Component {
           </FormGroup>
           <FormGroup controlId="formHorizontalPassword">
           <Col sm={2}>
-          Password:
+          Choose a Password:
           </Col>
           <Col sm={10}>
           <FormControl type="text" name="password" />

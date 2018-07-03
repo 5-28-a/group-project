@@ -2,6 +2,16 @@ import React from "react";
 import axios from 'axios';
 import './index.css';
 import './profile.css';
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  RedditShareButton,
+  RedditIcon,
+  EmailShareButton,
+  EmailIcon
+} from 'react-share';
 
 import { Button, Media, Col, Row, Glyphicon } from 'react-bootstrap';
 
@@ -248,6 +258,19 @@ movieDisplay() {
     return(
       <div>
         <h1>Welcome, {this.state.user}!</h1>
+        <h4>Share Your List on Social Media</h4>
+        <div id="socialMedia">
+          <FacebookShareButton url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} quote="Check Out My Top 5 Movies on MovieFive!">
+            <FacebookIcon size={32} round={true} />
+          </FacebookShareButton>
+          <EmailShareButton url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} subject="Check Out My Top 5 Movies on MovieFive!">
+            <EmailIcon size={32} round={true}/>
+          </EmailShareButton>
+          <TwitterShareButton url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} Title="MovieFive Top 5 List">
+            <TwitterIcon size={32} round={true}/>
+          </TwitterShareButton>
+        </div>
+        <h4>Or Copy this URL: <br />http://moviefive.herokuapp.com/?{this.state.user}#user</h4>
         {this.movieDisplay()}
       </div>
     );
