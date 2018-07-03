@@ -40,7 +40,7 @@ class FinalList extends React.Component {
               <Col xs={4} sm={3}>
               <img className="listPic" height={100} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.movie.one.pic}`} alt="58008" />
               </Col>
-              <Col xs={6} xsPull={1} sm={5}>
+              <Col xs={6} xsPull={1} sm={7}>
               <h2>{item.movie.one.name}</h2>
               </Col>
               </Row>
@@ -51,7 +51,7 @@ class FinalList extends React.Component {
               <Col xs={4} sm={3}>
               <img className="listPic" height={100} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.movie.two.pic}`} alt="58008" />
               </Col>
-              <Col Col xs={6} xsPull={1} sm={5}>
+              <Col Col xs={6} xsPull={1} sm={7}>
               <h2>{item.movie.two.name}</h2>
               </Col>
               </Row>
@@ -62,7 +62,7 @@ class FinalList extends React.Component {
               <Col xs={4} sm={3}>
               <img className="listPic" height={100} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.movie.three.pic}`} alt="58008" />
               </Col>
-              <Col xs={6} xsPull={1} sm={5}>
+              <Col xs={6} xsPull={1} sm={7}>
               <h2>{item.movie.three.name}</h2>
               </Col>
               </Row>
@@ -73,7 +73,7 @@ class FinalList extends React.Component {
               <Col xs={4} sm={3}>
               <img className="listPic" height={100} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.movie.four.pic}`} alt="58008" />
               </Col>
-              <Col xs={6} xsPull={1} sm={5}>
+              <Col xs={6} xsPull={1} sm={7}>
               <h2>{item.movie.four.name}</h2>
               </Col>
               </Row>
@@ -84,7 +84,7 @@ class FinalList extends React.Component {
               <Col xs={4} sm={3}>
               <img className="listPic" height={100} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.movie.five.pic}`} alt="58008" />
               </Col>
-              <Col xs={6} xsPull={1} sm={5}>
+              <Col xs={6} xsPull={1} sm={7}>
               <h2>{item.movie.five.name}</h2>
               </Col>
               </Row>

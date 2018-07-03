@@ -37,7 +37,7 @@ class Footer extends Component {
 							Powered by React
               <img className="footerLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="Scoops" height= {20} />
               Logged In as:  {this.state.user}
-              <a href="/logout">   Log Out</a>
+              <a className="logout" href="/logout">   Log Out</a>
           </div>
 				</footer>
       </div>

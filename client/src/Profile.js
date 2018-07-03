@@ -259,17 +259,31 @@ movieDisplay() {
       <div>
         <h1>Welcome, {this.state.user}!</h1>
         <h4>Share Your List on Social Media</h4>
-        <div id="socialMedia">
-          <FacebookShareButton url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} quote="Check Out My Top 5 Movies on MovieFive!">
-            <FacebookIcon size={32} round={true} />
+          <Row>
+            <Col xs={2} sm={4} />
+            <Col xs={2} sm={1}>
+          <FacebookShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} quote="Check Out My Top 5 Movies on MovieFive!">
+            <FacebookIcon size={32} round={false}/>
           </FacebookShareButton>
-          <EmailShareButton url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} subject="Check Out My Top 5 Movies on MovieFive!">
-            <EmailIcon size={32} round={true}/>
+          </Col>
+          <Col xs={2} sm={1}>
+          <EmailShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} subject="Check Out My Top 5 Movies on MovieFive!">
+            <EmailIcon size={32} round={false}/>
           </EmailShareButton>
-          <TwitterShareButton url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} Title="MovieFive Top 5 List">
-            <TwitterIcon size={32} round={true}/>
+          </Col>
+          <Col xs={2} sm={1}>
+          <RedditShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} Title="Check Out My Top 5 Movies on MovieFive!">
+            <RedditIcon size={32} round={false}/>
+          </RedditShareButton>
+          </Col>
+          <Col xs={2} sm={1}>
+          <TwitterShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} Title="MovieFive Top 5 List">
+            <TwitterIcon size={32} round={false}/>
           </TwitterShareButton>
-        </div>
+          </Col>
+          <Col xs={2} sm={4} />
+          </Row>
+        
         <h4>Or Copy this URL: <br />http://moviefive.herokuapp.com/?{this.state.user}#user</h4>
         {this.movieDisplay()}
       </div>
