@@ -42,8 +42,8 @@ class About extends React.Component {
       <p>
         Andrew is a 28 year old beginning developer from California.
         He is studying javascript and hopes to one day be as good at React
-        as Alan. His hobbies include Hearthstone, being groovy, and the occasional
-        craft beer.
+        as Alan. His hobbies include Hearthstone, using his sous vide, being 
+        groovy, and the occasional craft beer.
       </p>
     </Media.Body>
     </Col>

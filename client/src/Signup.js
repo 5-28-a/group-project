@@ -33,7 +33,7 @@ class Signup extends React.Component {
           </FormGroup>
         </Form>
         <Col sm={12}>
-        <p>Already have an account? <a href="#login">Log in here</a></p>
+        <p>Already have an account? <a className="signupLinkStyle" href="#login">Log in here</a></p>
         </Col>
       </div>
     );
