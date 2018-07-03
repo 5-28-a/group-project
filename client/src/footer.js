@@ -27,6 +27,7 @@ class Footer extends Component {
       }
     })
   }
+  
   loginCheck () {
     if (this.state.user != null) {
     return (
