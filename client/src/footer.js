@@ -34,10 +34,10 @@ class Footer extends Component {
       <div>
         <footer>
 					<div id="footer">
-							Powered by React
-              <img className="footerLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="Scoops" height= {20} />
-              Logged In as:  {this.state.user}
-              <a className="logout" href="/logout">   Log Out</a>
+						Powered by React
+            <img className="footerLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="Scoops" height= {20} />
+            Logged in as:  {this.state.user}
+            <a className="logout" href="/logout">   Log Out</a>
           </div>
 				</footer>
       </div>
