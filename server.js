@@ -467,7 +467,10 @@ app.post('/register', function(req, res) {
   });
 });
 
-app.post('/login', passport.authenticate('local'), function(req, res) {
+app.post('/login', passport.authenticate('local',{
+      successRedirect: '/#profile',
+      failureRedirect: '/#error3',
+    }), function(req, res) {
     res.redirect('/#profile');
 });
 
