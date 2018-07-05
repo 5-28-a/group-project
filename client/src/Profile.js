@@ -44,6 +44,7 @@ class IsLoggedIn extends React.Component {
       }
     }
       this.movieDisplay = this.movieDisplay.bind(this);
+      this.copyText = this.copyText.bind(this);
     }
 componentDidMount() {
   this.setState({ user: this.props.user });
@@ -62,11 +63,11 @@ movieDisplay() {
     <div className="Profile">
       <Media>
         <Row className="show-grid">
-          <h3>Movie One</h3>
+          <h2>Movie One</h2>
           <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
             <Media.Left align="middle">
               <div className="profileBorder">
-                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.one.pic}`} alt="58008" />
+                <img className="profilePic" onError={this.addDefaultSrc} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.one.pic}`} alt="58008" />
               </div>
             </Media.Left>
           </Col>
@@ -102,11 +103,11 @@ movieDisplay() {
       </Media>
       <Media>
         <Row>
-          <h3>Movie Two</h3>
+          <h2>Movie Two</h2>
           <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
             <Media.Left>
               <div className="profileBorder">
-                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.two.pic}`} alt="58008" />
+                <img className="profilePic" onError={this.addDefaultSrc} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.two.pic}`} alt="58008" />
               </div>
             </Media.Left>
           </Col>
@@ -142,11 +143,11 @@ movieDisplay() {
       </Media>
       <Media>
         <Row>
-          <h3>Movie Three</h3>
+          <h2>Movie Three</h2>
           <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
             <Media.Left>
                 <div className="profileBorder">
-                  <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.three.pic}`} alt="58008" />
+                  <img className="profilePic" onError={this.addDefaultSrc} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.three.pic}`} alt="58008" />
                 </div>
             </Media.Left>
           </Col>
@@ -182,11 +183,11 @@ movieDisplay() {
       </Media>
       <Media>
         <Row>
-          <h3>Movie Four</h3>
+          <h2>Movie Four</h2>
           <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
             <Media.Left>
               <div className="profileBorder">
-                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.four.pic}`} alt="58008" />
+                <img className="profilePic" onError={this.addDefaultSrc} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.four.pic}`} alt="58008" />
               </div>
             </Media.Left>
           </Col>
@@ -222,11 +223,11 @@ movieDisplay() {
       </Media>
       <Media>
         <Row>
-          <h3>Movie Five</h3>
+          <h2>Movie Five</h2>
           <Col xs={6} sm={6} md={6} smPush={1} mdPush={2}>
             <Media.Left>
               <div className="profileBorder">
-                <img className="profilePic" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.five.pic}`} alt="58008" />
+                <img className="profilePic" onError={this.addDefaultSrc} src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.movies.five.pic}`} alt="58008" />
               </div>
             </Media.Left>
           </Col>
@@ -254,6 +255,19 @@ movieDisplay() {
     </div>
   )
 }
+
+addDefaultSrc(ev){
+  ev.target.src = './placeposter.jpg'
+}
+
+copyText() {
+  // var el = this.myInput.value;
+  // var button = this.myButton.innerHTML;
+  // var newtext = "COPIED!"
+  // el.select();
+  // document.execCommand('copy');
+  // button = newtext;
+}
   render() {
     return(
       <div>
@@ -263,28 +277,41 @@ movieDisplay() {
             <Col xs={2} sm={4} />
             <Col xs={2} sm={1}>
           <FacebookShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} quote="Check Out My Top 5 Movies on MovieFive!">
-            <FacebookIcon size={32} round={false}/>
+            <FacebookIcon className="mediaStyle" size={32} round={false}/>
           </FacebookShareButton>
           </Col>
           <Col xs={2} sm={1}>
           <EmailShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} subject="Check Out My Top 5 Movies on MovieFive!">
-            <EmailIcon size={32} round={false}/>
+            <EmailIcon className="mediaStyle" size={32} round={false}/>
           </EmailShareButton>
           </Col>
           <Col xs={2} sm={1}>
           <RedditShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} Title="Check Out My Top 5 Movies on MovieFive!">
-            <RedditIcon size={32} round={false}/>
+            <RedditIcon className="mediaStyle" size={32} round={false}/>
           </RedditShareButton>
           </Col>
           <Col xs={2} sm={1}>
           <TwitterShareButton className="mediaShare" url={`http://moviefive.herokuapp.com/?${this.state.user}#user`} Title="MovieFive Top 5 List">
-            <TwitterIcon size={32} round={false}/>
+            <TwitterIcon className="mediaStyle" size={32} round={false}/>
           </TwitterShareButton>
           </Col>
           <Col xs={2} sm={4} />
           </Row>
-        
-        <h4>Or Copy this URL: <br />http://moviefive.herokuapp.com/?{this.state.user}#user</h4>
+
+        <h4>Or Copy this URL:
+          {/* <br />http://moviefive.herokuapp.com/?{this.state.user}#user */}
+        </h4>
+        <textarea ref={input => {
+            this.myInput = input;
+          }}
+          rows="3" cols="55"
+          value={`http://moviefive.herokuapp.com/?${this.state.user}#user`}
+        /><br />
+        <Button ref={input => {
+            this.myButton = input;
+          }}
+          onClick={this.copyText()}
+          bsStyle="info">Copy Text</Button>
         {this.movieDisplay()}
       </div>
     );

@@ -5,7 +5,7 @@ class Error1 extends React.Component {
       return(
       <div>
         <h1>Registration Error!</h1>
-        <h4>That User Name has already been registered! Lets <a href="#signup">head back and try to pick a different one,</a> shall we?</h4>
+        <h4>That Username has already been registered! Lets <a classname="errorLink" href="#signup">head back and try to pick a different one,</a> shall we?</h4>
       </div>
     );
   }
