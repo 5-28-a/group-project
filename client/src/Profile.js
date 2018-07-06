@@ -20,6 +20,8 @@ class IsLoggedIn extends React.Component {
       super()
       this.state = {
         user: null,
+        buttonText: "Copy To Clipboard",
+        copyText: null,
         movies: {
         "one": {
             "name": "one",
@@ -44,10 +46,13 @@ class IsLoggedIn extends React.Component {
       }
     }
       this.movieDisplay = this.movieDisplay.bind(this);
-      this.copyText = this.copyText.bind(this);
     }
+
 componentDidMount() {
-  this.setState({ user: this.props.user });
+  this.setState({
+    user: this.props.user,
+    copyText: `http://moviefive.herokuapp.com/?${this.props.user}#user`
+    });
   var currentUser = this.props.user;
   axios.get(`/userprofile/?name=${currentUser}`)
     .then((response) => {
@@ -252,6 +257,17 @@ movieDisplay() {
           </Col>
         </Row>
       </Media>
+      <div>
+        <h3>Delete Your Profile:</h3>
+        <form action="/delprofile" method="post" name="delprofile">
+          <input type="hidden" name="name" value={this.state.user}/>
+          <Button className="deleteButton" bsStyle="danger" type="submit">
+            DELETE PROFILE
+            <Glyphicon glyph="exclamation-sign"/>
+          </Button>
+          <h4>WARNING: This action CANNOT be UNDONE!</h4>
+        </form>
+      </div>
     </div>
   )
 }
@@ -260,15 +276,7 @@ addDefaultSrc(ev){
   ev.target.src = './placeposter.jpg'
 }
 
-copyText() {
-  // var el = this.myInput.value;
-  // var button = this.myButton.innerHTML;
-  // var newtext = "COPIED!"
-  // el.select();
-  // document.execCommand('copy');
-  // button = newtext;
-}
-  render() {
+render() {
     return(
       <div>
         <h1>Welcome, {this.state.user}!</h1>
@@ -299,19 +307,8 @@ copyText() {
           </Row>
 
         <h4>Or Copy this URL:
-          {/* <br />http://moviefive.herokuapp.com/?{this.state.user}#user */}
+          <br /><a className="errorLink" href={this.state.copyText}>{this.state.copyText}</a>
         </h4>
-        <textarea ref={input => {
-            this.myInput = input;
-          }}
-          rows="3" cols="55"
-          value={`http://moviefive.herokuapp.com/?${this.state.user}#user`}
-        /><br />
-        <Button ref={input => {
-            this.myButton = input;
-          }}
-          onClick={this.copyText()}
-          bsStyle="info">Copy Text</Button>
         {this.movieDisplay()}
       </div>
     );
